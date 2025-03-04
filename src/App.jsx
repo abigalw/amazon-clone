@@ -1,17 +1,25 @@
-import { useState } from 'react'
-import './App.css'
-import Header from './Components/Header/Header'
-import Carousel from './Components/Carousel/Carousel'
+import React, { useContext, useEffect } from "react";
+import { RouterProvider } from "react-router-dom";
+import { Router } from "./Router";
+import { ACTION } from "./Utility/action.type";
+import { DataContext } from "./Components/DataProvider/Dateprovider";
+// import { auth } from "./Utility/firebase";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const context = useContext(DataContext);
+
+  if (!context) {
+    console.error("DataContext is not available. Ensure DataProvider wraps the app.");
+    return <h1>Loading...</h1>; // Prevent crash if context is missing
+  }
+
+  const [state, dispatch] = context; // Now safely using context
 
   return (
-    <div>
-    <Header/>
-    <Carousel/>
-    </div>
-  )
-}
+    <>
+      <RouterProvider router={Router} />
+    </>
+  );
+};
 
-export default App
+export default App;
