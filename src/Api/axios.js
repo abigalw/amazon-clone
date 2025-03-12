@@ -8,6 +8,7 @@ const axiosInstance = axios.create({
   // baseURL: "https://api-xbfdcaz4hq-uc.a.run.app",
   //deployed server on render
   baseURL: "https://amazon-api-deploy-xoki.onrender.com",
+  
 
 });
 
