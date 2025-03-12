@@ -1,17 +1,22 @@
+
 import { createBrowserRouter } from "react-router-dom";
 import ProtectRoute from "./components/ProtectRoute/ProtectRoute";
 import Layout from "./Components/Layout/Layout";
 import Landing from "./Pages/Landing/Landing";
 import Auth from "./pages/Auth/Auth";
 import Cart from "./Pages/Cart/Cart";
-import Payment from "./Pages/Payment/Payment";
-import Orders from "./Pages/Orders/Orders";
-import Results from "./Pages/Results/Results";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import Four04 from "./Pages/Four04/Four04";
-const stripePromise = loadStripe(import.meta.env.VITE_REACT_APP_STRIPE_PK);
+import Payment from "./Pages/Payment/Payment";
+import Orders from "./Pages/Orders/Orders";
+import Results from "./Pages/Results/Results";
+
+
+
+
+const stripePromise = loadStripe("pk_test_51R1NXDIWvFTUedADdu97efPathzlUJkpHOWyTw9T9TWTBlHhjYDrkhaF8pbZ5zFmRodpcA81LOPwYoHlLrbEoezf00TCOkX66g");
 
 export const Router = createBrowserRouter([
   {

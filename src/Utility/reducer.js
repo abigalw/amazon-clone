@@ -8,17 +8,17 @@ export const initialState = {
 export const reducer = (state, action) => {
     switch (action.type) {
       case ACTION.ADD_TO_BASKET: {
-        // Check if the item already exists in the basket
+        // Check item already exists in the basket
         const existingItem = state.basket.find((item) => item.id === action.item.id);
   
         if (!existingItem) {
-          // If the item is not in the basket, add it with amount: 1
+          
           return {
             ...state,
             basket: [...state.basket, { ...action.item, amount: 1 }],
           };
         } else {
-          // If the item exists, update its amount
+          
           const updatedBasket = state.basket.map((item) =>
             item.id === action.item.id ? { ...item, amount: item.amount + 1 } : item
           );

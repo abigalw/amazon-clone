@@ -1,14 +1,14 @@
 import React, { useState, useContext } from "react";
-import { DataContext } from "../../Components/DataProvider/Dateprovider";
 import amazon from "./amazon-logo.png";
 import classes from "./Auth.module.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-// import { auth } from "../../Utility/firebase";
+import { DataContext } from "../../Components/DataProvider/Dateprovider";
+import { auth } from "../../Utility/firebase";
 import { ClipLoader } from "react-spinners";
-// import {
-//   signInWithEmailAndPassword,
-//   createUserWithEmailAndPassword,
-// } from "firebase/auth";
+import {
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
 import { ACTION } from "../../Utility/action.type";
 
 const Auth = () => {
@@ -94,6 +94,7 @@ const Auth = () => {
                 id="email"
               />
             </div>
+            
             <div>
               <label htmlFor="password">Password</label>
               <input
@@ -116,8 +117,8 @@ const Auth = () => {
             </button>
           </form>
           <p>
-            By signing-in you agree to the AMAZON FAKE CLONE Condition of Use &
-            Sale. Please see our Privacy Notice, our Cookies Notice and our
+            By signing-in you agree to the AMAZON CLONE Condition of Use &
+            Sale. Please see our Privacy Policy, our Cookies Notice and our
             Interest-Based Ads Notice.
           </p>
           {/* create account button */}

@@ -11,7 +11,7 @@ const Loader = () => {
         height: "60vh",
       }}
     >
-      {/* <SyncLoader /> */}
+      <SyncLoader />
     </div>
   );
 };

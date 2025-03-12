@@ -1,5 +1,4 @@
 .card__container {
-    /* width: 220px; */
     width: 280px;
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
     padding: 10px;
@@ -82,7 +81,6 @@
     display: block;
     position: static;
     width: 150px;
-    /* margin-right: 40px; */
   }
   
   .d_flex {

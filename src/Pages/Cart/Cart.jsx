@@ -3,9 +3,9 @@ import classes from "../Cart/Cart.module.css";
 import { DataContext } from "../../Components/DataProvider/Dateprovider";
 import ProductCard from "../../Components/Product/Productcard";
 import CurrencyFormat from "../../Components/CurrencyFormat/Curencyformat";
-import { Link } from "react-router-dom";
 import { ACTION } from "../../Utility/action.type";
 import { FaAngleUp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { FaAngleDown } from "react-icons/fa";
 
 

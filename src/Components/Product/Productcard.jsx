@@ -34,7 +34,6 @@ const ProductCard = ({ product, flex, renderDesc, renderAdd, haveLink }) => {
 
 
 
-
   return (
     <>
       <div className={`${classes.card__container} ${flex && classes.d_flex}`}>
@@ -52,6 +51,7 @@ const ProductCard = ({ product, flex, renderDesc, renderAdd, haveLink }) => {
               {truncateTitle(description, 105)}
             </div>
           )}
+
           <div className={classes.rating}>
             {/* rating */}
             <Rating
@@ -62,6 +62,7 @@ const ProductCard = ({ product, flex, renderDesc, renderAdd, haveLink }) => {
             {/* rating count */}
             <small>{rating.count}</small>
           </div>
+          
           <div>
             {/* price */}
             <CurrencyFormat amount={price} />

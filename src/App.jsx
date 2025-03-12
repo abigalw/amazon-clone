@@ -3,18 +3,30 @@ import { RouterProvider } from "react-router-dom";
 import { Router } from "./Router";
 import { ACTION } from "./Utility/action.type";
 import { DataContext } from "./Components/DataProvider/Dateprovider";
-// import { auth } from "./Utility/firebase";
+import { auth } from "./Utility/firebase";
+
 
 const App = () => {
-  const context = useContext(DataContext);
+  const [state, dispatch] = useContext(DataContext);
 
-  if (!context) {
-    console.error("DataContext is not available. Ensure DataProvider wraps the app.");
-    return <h1>Loading...</h1>; // Prevent crash if context is missing
-  }
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        dispatch({
+          type: ACTION.SET_USER,
+          user: authUser,
+        });
 
-  const [state, dispatch] = context; // Now safely using context
-
+       
+      } else {
+        dispatch({
+          type: ACTION.SET_USER,
+          user: null,
+        });
+      }
+    });
+  }, []);
+  
   return (
     <>
       <RouterProvider router={Router} />

@@ -1,14 +1,12 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-
-import { MdLocationPin } from "react-icons/md";
-import { FaSearch } from "react-icons/fa";
-import { BiCartAdd } from "react-icons/bi";
-
 import classes from "./Header.module.css";
 import LowerHeader from "../LowerHeader/Lowerheader";
 import { DataContext } from "../../Components/DataProvider/Dateprovider";
-// import { auth } from "../../Utility/firebase";
+import { auth } from "../../Utility/firebase";
+import { MdLocationPin } from "react-icons/md";
+import { FaSearch } from "react-icons/fa";
+import { BiCartAdd } from "react-icons/bi";
 
 const Header = () => {
   const [{ basket, user }] = useContext(DataContext);
@@ -21,6 +19,7 @@ const Header = () => {
     <section className={classes.fixed}>
       <section className={classes.navBar}>
         <section className={classes.header__container}>
+
           {/* left header */}
           <div className={classes.logo__container}>
             {/* logo */}
@@ -30,6 +29,7 @@ const Header = () => {
                 alt="amazon logo"
               />
             </Link>
+
             {/* delivery */}
             <div className={classes.delivery}>
               <span>
@@ -45,17 +45,20 @@ const Header = () => {
 
           {/* middle header */}
           <div className={classes.search}>
+
             {/* search */}
             <select name="" id="">
               <option value="">All</option>
             </select>
             <input type="text" name="" id="" placeholder="Search Product" />
+
             {/* search icon */}
             <FaSearch size={37.5} />
           </div>
 
           {/* right header */}
           <div className={classes.order__container}>
+
             {/* right side link */}
             <Link to="#" className={classes.language}>
               <img
@@ -66,6 +69,7 @@ const Header = () => {
                 <option value="">EN</option>
               </select>
             </Link>
+
             {/* three component */}
             <Link to={!user && "/auth"}>
               <div>
@@ -73,7 +77,7 @@ const Header = () => {
                   <>
                     <p>Hello, {user?.email?.split("@")[0]}</p>
                     <span onClick={() => (user ? auth.signOut() : null)}>
-                      Log Out
+                      Sign Out
                     </span>
                   </>
                 ) : (
@@ -84,13 +88,16 @@ const Header = () => {
                 )}
               </div>
             </Link>
+
             {/* orders */}
             <Link to="/orders">
               <p>returns</p>
               <span>& Orders</span>
             </Link>
+
             {/* cart */}
             <Link to="/cart" className={classes.cart}>
+            
               {/* cart icon */}
               <BiCartAdd size={39} />
               <span>{totalItem}</span>
