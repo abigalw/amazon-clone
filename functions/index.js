@@ -1,18 +1,16 @@
-const dotenv = require("dotenv")
-dotenv.config()
-const {onRequest} = require("firebase-functions/v2/https");
-const logger = require("firebase-functions/logger");
-const express = require("express")
-const cors = require("cors")
-const functions = require("firebase-functions");
-const { setGlobalOptions } = require("firebase-functions/v2/options");
-const admin = require("firebase-admin");
-admin.initializeApp();
+import dotenv from "dotenv";
+import express from "express";
+import cors from "cors";
+import { setGlobalOptions } from "firebase-functions/v2/options";
+import stripePackage from "stripe";
+import { onRequest } from "firebase-functions/v2/https";
 
 
-admin.initializeApp();
-const stripe = require("stripe")(process.env.STRIPE_KEY);
 
+dotenv.config();
+/* eslint-disable no-undef */
+const stripe = stripePackage(process.env.STRIPE_KEY);
+/* eslint-enable no-undef */
 
 
 const app = express();
@@ -47,4 +45,4 @@ app.post("/payment/create", async (req, res) => {
   }
 });
 
-exports.api = onRequest(app);
+export const api = onRequest(app);
