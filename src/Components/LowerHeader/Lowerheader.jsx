@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "../Header/header.module.css";
+import classes from "./LowerHeader.module.css";
 import { IoMenuSharp } from "react-icons/io5";
 
 
