@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import ProtectRoute from "./components/ProtectRoute/ProtectRoute";
 import Layout from "./Components/Layout/Layout";
 import Landing from "./Pages/Landing/Landing";
-import Auth from "./pages/Auth/Auth";
+import Auth from "../src/Pages/Auth/Auth";
 import Cart from "./Pages/Cart/Cart";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 import { Elements } from "@stripe/react-stripe-js";
